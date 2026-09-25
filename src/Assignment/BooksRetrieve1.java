@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Scanner;
 
-public class BooksRetreive {
+public class BooksRetrieve {
     private  static final String url = "jdbc:mysql://localhost:3306/adv_java_db";
     private static final String db_userId = "root";
     private static final String db_passcode = "Xlim@152009";
@@ -21,7 +21,7 @@ public class BooksRetreive {
         String userInputPrice = sc.nextLine();
 
         // Database Connectivity
-        Class.forName("com.mysql.cj.jdbc.Driver");
+//        Class.forName("com.mysql.cj.jdbc.Driver");   // this is not need because jvm already load the class
         Connection connectionMysql = DriverManager.getConnection(url,db_userId,db_passcode);
         PreparedStatement preparedStatement;
 
