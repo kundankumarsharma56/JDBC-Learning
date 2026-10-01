@@ -24,7 +24,7 @@
 3. [JDBC Flow](#-jdbc-flow)
 4. [SQL Operations](#️-sql-operations)
 5. [ResultSet](#-resultset)
-6. [PreparedStatement](#️-preparedstatement)
+6. [PreparedStatementWithExa](#️-preparedstatement)
 7. [CallableStatement](#-callablestatement)
 8. [Batch Operations](#️-batch-operations)
 9. [Transactions](#-transactions)
@@ -67,7 +67,7 @@ mindmap
     Driver
     Connection
     Statement
-    PreparedStatement
+    PreparedStatementWithExa
     CallableStatement
     ResultSet
     RowSet
@@ -81,7 +81,7 @@ mindmap
 | `DriverManager` | Locates and loads the correct JDBC driver, manages `Connection` creation |
 | `Connection` | Represents a live session with the database |
 | `Statement` | Executes static SQL with no parameters |
-| `PreparedStatement` | Executes parameterized, precompiled SQL |
+| `PreparedStatementWithExa` | Executes parameterized, precompiled SQL |
 | `CallableStatement` | Executes stored procedures |
 | `ResultSet` | Represents the tabular result of a query |
 | `RowSet` | A connected/disconnected wrapper around `ResultSet` |
@@ -178,11 +178,11 @@ Before First
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:8250df&height=3&width=1000&animation=fadeIn" />
 </p>
 
-## 🛡️ PreparedStatement
+## 🛡️ PreparedStatementWithExa
 
 Parameterized SQL using `?` placeholders, precompiled by the database for reuse and protection against SQL injection.
 
-| | `Statement` | `PreparedStatement` |
+| | `Statement` | `PreparedStatementWithExa` |
 |---|---|---|
 | Compilation | Every execution | Once, reused |
 | Parameters | String concatenation | Bound via `set*()` |
@@ -323,7 +323,7 @@ Storing and retrieving binary data (e.g. images) using database `BLOB` columns.
 ```mermaid
 flowchart LR
     FILE["Image File"] --> INPUT["FileInputStream"]
-    INPUT --> JDBC["PreparedStatement"]
+    INPUT --> JDBC["PreparedStatementWithExa"]
     JDBC --> BLOB["BLOB"]
     BLOB --> DB[("Database")]
 
